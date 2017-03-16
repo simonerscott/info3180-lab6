@@ -9,6 +9,11 @@
         {
             $scope.products = ["Milk", "Bread", "Cheese"];
             
+            $scope.addItem = function () 
+            {
+                $scope.products.push($scope.addMe);
+            }
+
         });
     </script>
     
@@ -19,6 +24,9 @@
             <li ng-repeat="product in products">{{ product }}</li>
         </ul>
         
+        <input ng-model="addMe">
+        <button ng-click="addItem()">Add</button>
+
     </div>
 
     
