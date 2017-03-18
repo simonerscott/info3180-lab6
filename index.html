@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
+    
+    <head>
+        <link rel="stylesheet" href="index.css">
+    </head>
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
     <script>
@@ -36,17 +41,24 @@
     
     
     
-    <div ng-app="myShoppingList" ng-controller="myCtrl">
+    <div ng-app="myShoppingList" ng-controller="myCtrl" class = "card">
+        <header class = "header">
+            <h2> My Shopping List </h2>
+        </header>
+        
         <ul>
             <li ng-repeat="product in products">{{ product }}
                 <span ng-click="removeItem($index)">&times;</span>
             </li>
         </ul>
         
-        <input ng-model="addMe">
-        <button ng-click="addItem()">Add</button>
+        <div class = "header">
+            <input ng-model="addMe" placeholder = "Shopping List Item Name" type = "text" ng-hide="hidden" clear-input>
+            <button ng-click="addItem()">Add</button>
+        </div>
+        
 
-        <p>{{ errortext }}</p>
+        <p id = "errortext">{{ errortext }}</p>
     </div>
 
     
